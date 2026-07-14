@@ -1,40 +1,40 @@
 package tp.ejercicio6;
 import java.util.Scanner;
 public class TPEJERCICIO6 {
-    
+
     public static void main(String[] args) {
-       Scanner teclado = new Scanner(System.in);
 
-       
+        Scanner teclado = new Scanner(System.in);
+
         int cantidad = 3;
-        // Creamos matrices separadas
-        String[] nombres = new String[cantidad];
-        int[] edades = new int[cantidad];
-        double[] sueldos = new double[cantidad];
 
        
+        String[] empleados = new String[cantidad];
+
         System.out.println("Registro de empleados");
-        
+
         for (int i = 0; i < cantidad; i++) {
-            System.out.println("\n Empleado número " + (i + 1) + ":");
-            
+
+            System.out.println("Empleado número " + (i + 1));
+
             System.out.print("Ingrese el nombre: ");
-            nombres[i] = teclado.nextLine();
-            
+            String nombre = teclado.nextLine();
+
             System.out.print("Ingrese la edad: ");
-            edades[i] = teclado.nextInt();
-            
+            int edad = teclado.nextInt();
+
             System.out.print("Ingrese el sueldo: ");
-            sueldos[i] = teclado.nextDouble();
+            double sueldo = teclado.nextDouble();
+            teclado.nextLine(); 
+
+            empleados[i] = nombre + " - " + edad + " - " + sueldo;
         }
 
-        System.out.println("\n matriz de empleados");
-        System.out.println("Nombre,Edad y Sueldo");
- 
+        System.out.println("Matriz de empleados");
+        System.out.println("Nombre - Edad - Sueldo");
 
         for (int i = 0; i < cantidad; i++) {
-            System.out.println(nombres[i] + " " + edades[i] + " " + sueldos[i]);
+            System.out.println(empleados[i]);
         }
-     
     }
 }
